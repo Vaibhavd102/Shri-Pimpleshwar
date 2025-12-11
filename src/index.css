@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 20 25% 15%;
+
+    --card: 40 30% 96%;
+    --card-foreground: 20 25% 15%;
+
+    --popover: 40 30% 96%;
+    --popover-foreground: 20 25% 15%;
+
+    --primary: 30 90% 50%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 340 45% 25%;
+    --secondary-foreground: 40 33% 98%;
+
+    --muted: 35 25% 90%;
+    --muted-foreground: 20 15% 40%;
+
+    --accent: 45 85% 55%;
+    --accent-foreground: 20 25% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 30% 85%;
+    --input: 35 30% 85%;
+    --ring: 30 90% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom temple colors */
+    --saffron: 30 90% 50%;
+    --saffron-light: 35 85% 65%;
+    --saffron-dark: 25 85% 40%;
+    --maroon: 340 45% 25%;
+    --maroon-light: 340 40% 35%;
+    --gold: 45 85% 55%;
+    --gold-light: 48 80% 70%;
+    --cream: 40 33% 96%;
+    --temple-green: 120 30% 35%;
+
+    /* Gradients */
+    --gradient-saffron: linear-gradient(135deg, hsl(30 90% 50%), hsl(45 85% 55%));
+    --gradient-sacred: linear-gradient(180deg, hsl(40 33% 98%) 0%, hsl(35 25% 90%) 100%);
+    --gradient-maroon: linear-gradient(135deg, hsl(340 45% 25%), hsl(340 40% 35%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(30 90% 50% / 0.15);
+    --shadow-glow: 0 0 30px hsl(45 85% 55% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 25% 10%;
+    --foreground: 40 33% 96%;
+
+    --card: 20 25% 12%;
+    --card-foreground: 40 33% 96%;
+
+    --popover: 20 25% 12%;
+    --popover-foreground: 40 33% 96%;
+
+    --primary: 30 90% 50%;
+    --primary-foreground: 20 25% 10%;
+
+    --secondary: 340 45% 35%;
+    --secondary-foreground: 40 33% 96%;
+
+    --muted: 20 20% 20%;
+    --muted-foreground: 35 20% 60%;
+
+    --accent: 45 85% 55%;
+    --accent-foreground: 20 25% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 20% 25%;
+    --input: 20 20% 25%;
+    --ring: 30 90% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .gradient-saffron {
+    background: var(--gradient-saffron);
+  }
+
+  .gradient-sacred {
+    background: var(--gradient-sacred);
+  }
+
+  .gradient-maroon {
+    background: var(--gradient-maroon);
+  }
+
+  .text-gradient-saffron {
+    background: var(--gradient-saffron);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Decorative border pattern */
+.border-decorative {
+  border-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--primary)) 20%,
+    hsl(var(--gold)) 50%,
+    hsl(var(--primary)) 80%,
+    transparent 100%
+  ) 1;
+}
+
+/* Om symbol text styling */
+.om-symbol {
+  font-family: 'Noto Sans Devanagari', serif;
+}
