@@ -170,6 +170,8 @@ const Navbar = () => {
               >
                 Donate
               </a>
+
+              <a href="#gallery">Gallery</a>
             </div>
           </div>
         )}

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import GallerySection from "./components/GallerySection";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,16 @@ const App = () => (
       </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
+
+
+
+
 );
+
+
+
+
+
 
 
 export default App;
