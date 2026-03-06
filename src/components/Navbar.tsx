@@ -95,7 +95,7 @@ const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Darshan", href: "#darshan" },
-  { name: "Gallery", href: "#gallery" },
+  // { name: "Gallery", href: "#gallery" },
   { name: "Events", href: "#events" },
   { name: "Contact", href: "#contact" },
 ];
@@ -171,7 +171,7 @@ const Navbar = () => {
                 Donate
               </a>
 
-              <a href="#gallery">Gallery</a>
+              {/* <a href="#gallery">Gallery</a> */}
             </div>
           </div>
         )}
